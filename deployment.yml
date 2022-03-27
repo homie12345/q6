@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: salman
+spec:
+  replicas: 3
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: salman
+  template:
+    metadata:
+      labels:
+        app: salman
+    spec:
+      containers:
+      - name: salman
+        image: salmanq1/q2:latest
+        ports:
+        - containerPort: 8080
